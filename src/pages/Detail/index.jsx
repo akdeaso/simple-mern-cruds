@@ -49,7 +49,7 @@ const Detail = () => {
           <tr>
             <td>Photo</td>
             <td>
-              : <img src={product.image_url} />
+              : <img className="image-cell" src={product.image_url} />
             </td>
           </tr>
         </tbody>
