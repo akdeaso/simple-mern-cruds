@@ -55,6 +55,18 @@ const Home = () => {
     }
   };
 
+  const handleDelete = async (productId) => {
+    try {
+      await axios.delete(
+        `https://crowded-cyan-sweatshirt.cyclic.app/api/v4/product/${productId}`
+      );
+      alert("Product Deleted Successfully");
+      fetchProducts();
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   useEffect(() => {
     searchProducts();
   }, [search]);
@@ -109,9 +121,12 @@ const Home = () => {
                   >
                     Edit
                   </Link>
-                  <Link to="#" className="btn btn-sm btn-danger">
+                  <button
+                    onClick={() => handleDelete(product._id)}
+                    className="btn btn-sm btn-danger"
+                  >
                     Delete
-                  </Link>
+                  </button>
                 </td>
               </tr>
             ))
