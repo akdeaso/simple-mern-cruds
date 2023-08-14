@@ -107,7 +107,9 @@ const Home = () => {
               <tr key={index}>
                 <td>{index + 1}</td>
                 <td>{product.name}</td>
-                <td className="text-right">RP {product.price}</td>
+                <td className="text-right">
+                  RP {product.price.toLocaleString("id-ID")}
+                </td>
                 <td className="text-center">
                   <Link
                     to={`/detail/${product._id}`}
